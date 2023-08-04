@@ -9,9 +9,9 @@ use App\Models\User;
 class AdminDashboardController extends Controller
 {
     public function index(){
-        // $id=Auth::user()->id;
-        // $admin_info=User::find($id);
+        $id=Auth::user()->id;
+        $admin_info=User::find($id);
         // dd($admin_info);
-        return view('admin.index');
+        return view('admin.index', compact('admin_info'));
     }
 }
